@@ -2,7 +2,7 @@ import React from 'react';
 import 'react-native-gesture-handler';
 import {ThemeProvider} from 'ui';
 import {RootNavigator} from 'navigation';
-import APIProvider from 'api/APIProvider';
+import APIProvider from 'api/ReactQueryProvider';
 
 const App = () => {
   return (

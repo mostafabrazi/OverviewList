@@ -1,15 +1,23 @@
 import gql from 'graphql-tag';
 
 export const GET_ITEMS = gql`
-  query {
-    allStarships(first: 2) {
-      starships {
-        id
+  query ($limit: Int) {
+    allPeople(first: $limit) {
+      people {
         name
-        model
-        starshipClass
-        length
-        crew
+        __typename
+      }
+    }
+    allPlanets(first: $limit) {
+      planets {
+        name
+        __typename
+      }
+    }
+    allStarships(first: $limit) {
+      starships {
+        name
+        __typename
       }
     }
   }
