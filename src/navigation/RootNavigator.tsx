@@ -10,7 +10,7 @@ export const RootNavigator = () => {
   const {colors} = useTheme();
   return (
     <NavigationContainer>
-      <SafeAreaView edges={['top']} style={{backgroundColor: colors.black}} />
+      <SafeAreaView edges={['top']} style={{backgroundColor: colors.primary}} />
       <Stack.Navigator
         initialRouteName="Home"
         screenOptions={{

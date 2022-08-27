@@ -1,83 +1,61 @@
-# Obytes Mobile App
+# Items list client mobile app for SWAPI (star wars api)
 
-The project was created using [react-native-obytes-template](https://github.com/obytes/react-native-template-obytes)
+- Design based on <a href="https://dribbble.com/shots/18314501-DroidDepot-App">`DroidDepot`</a> app, Check Dribbble <a href="https://dribbble.com/shots/18314501-DroidDepot-App">here</a>
+- API is based on <a href="https://github.com/graphql/swapi-graphql">graphql/swapi-graphql</a> repository, check GrapgQl playground <a href="https://graphql.github.io/swapi-graphql">here</a>
+    - PS. Link https://api-euwest.graphcms.com/v1/ck5wca13qc9ux01fgaidt12m4/master mentioned in the pdf is **no more working**.
+    
+### To install the app please follow the steps below:
 
-## ▶️ Usage
 
-1. [Setting up IOS and Android development environment](https://reactnative.dev/docs/environment-setup)
+1- Clone this directory using this command in you favorite folder on your machine
 
-2. Start working
+```
+cd [YOUR_FAVORITE_FOLDER]
+git clone git@github.com:mostafabrazi/OverviewList.git
+```
 
-```bash
-## install deps
+2- Change directory to `OverviewList`
+
+```
+cd [YOUR_FAVORITE_FOLDER]/OverviewList
+```
+
+2- Install node packages
+
+```
 yarn
-
-## install ios pods
-yarn setup:ios
-
-## ios
-yarn ios
-
-## android
-yarn android
-
 ```
 
-## ⚙️ Enable husky Git pre-hooks
-
-Add the following script to your `packages.json` and reinstall dependencies to enable husky pre-commit using `yarn install`
-
-```json
-"scripts": {
-    //...
-     "postinstall": "husky install",
-  },
+3- Start metro server 
 
 ```
+yarn start
+```
+    Clearing cache `yarn start -reset--cache`
 
-## 📲 Update App Icon & Splash screen
-
-Replace App logo template `logo.png` with your logo under `assets` folder
-
-Run the following command to generate App icons assets :
+4- Install pods for iOS app
 
 ```
-yarn react-native set-icon  --path ./assets/logo.png --background "#FFF"
-
+pod install
 ```
 
-> For android icon, make sure to provide a logo with more padding and generate a new app icon for android :
+5- Run iOS app
 
 ```
-yarn react-native set-icon  --platform android  --path ./assets/android_logo.png --background "#FFF"
-
+npx react-native run-ios
 ```
 
-To generate a standard splash screen using bootsplash package.
-
-```sh
-yarn react-native generate-bootsplash assets/logo.png \
-  --background-color=FFFFFF \
-  --logo-width=150 \
-  --assets-path=assets
-```
-
-## ✏️ Custom fonts
-
-Replace Inter.ttf font file with your fonts under `assets/fonts` folder
-
-Run the following command to generate App icons assets :
+or Android app
 
 ```
-yarn react-native link
+npx react-native run-android
 ```
 
-More details [how to customize App Icon and Splash screen](https://handbook.obytes.com/docs/mobile/generate-app-icon)
+Note: For android app, add these lines to `android/gradle.properties` if you are using Java `java version "17.0.1" 2021-10-19 LTS`
 
-## Releasing and building the app with Github action
+```
+org.gradle.jvmargs=-Xmx4096m -XX:MaxPermSize=4096m -XX:+HeapDumpOnOutOfMemoryError
+org.gradle.jvmargs=-Xmx1536M --add-exports=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-exports=jdk.unsupported/sun.misc=ALL-UNNAMED
+```
 
-👉 https://handbook.obytes.com/docs/mobile/ci-cd/github-action-build
-
-## 📚 Read More About Modules
-
-👉 https://handbook.obytes.com/docs/mobile/get-started
+Here we go, our app is up and running!

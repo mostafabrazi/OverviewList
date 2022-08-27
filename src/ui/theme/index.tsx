@@ -1,5 +1,4 @@
 import * as React from 'react';
-// import { createTheme, BaseTheme } from '@shopify/restyle';
 import {
   ThemeProvider as ReThemeProvider,
   TextProps,
@@ -17,13 +16,9 @@ const createTheme = <T extends BaseThemeType>(themeObject: T): T => themeObject;
 
 const BaseTheme = {
   colors: {
-    text: '#202124',
-    background: '#fff',
-    primary: '#151522',
-    secondary: '#9c27b0',
-    muted: '#f1f3f4',
-
-    // from figma file
+    text: '#2A1A07',
+    primary: '#371F15',
+    secondary: '#E2D3AB',
 
     black: '#151522',
     grey1: '#333333',
@@ -34,8 +29,11 @@ const BaseTheme = {
     red: '#EB5757',
   },
   spacing: {
+    xs: 4,
     s: 8,
-    m: 16,
+    ms: 10,
+    m: 14,
+    ml: 20,
     l: 24,
     xl: 40,
   },

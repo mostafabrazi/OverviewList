@@ -1,2 +1,2 @@
 export * from './useItems';
-export * from './useOneItem';
+export * from './useItemDetails';
