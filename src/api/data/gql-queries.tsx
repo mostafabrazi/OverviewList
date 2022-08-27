@@ -5,19 +5,19 @@ export const GET_ITEMS = gql`
     allPeople(first: $limit) {
       people {
         name
-        __typename
+        type: __typename
       }
     }
     allPlanets(first: $limit) {
       planets {
         name
-        __typename
+        type: __typename
       }
     }
     allStarships(first: $limit) {
       starships {
         name
-        __typename
+        type: __typename
       }
     }
   }

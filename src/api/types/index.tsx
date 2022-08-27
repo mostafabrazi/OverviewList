@@ -1,5 +1,5 @@
 export type ItemType = {
-  __typename: string;
+  type: string;
   name: string;
 };
 
