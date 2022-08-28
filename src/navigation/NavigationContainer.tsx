@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import {NavigationContainer as RNNavigationContainer} from '@react-navigation/native';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {StatusBar} from 'react-native';
@@ -14,8 +14,9 @@ export const NavigationContainer = ({
   return (
     <SafeAreaProvider>
       <StatusBar
-        barStyle={navigation.dark ? 'light-content' : 'dark-content'}
+        barStyle="light-content"
         backgroundColor={navigation.colors.background}
+        translucent={true}
       />
       <RNNavigationContainer theme={navigation}>
         {children}

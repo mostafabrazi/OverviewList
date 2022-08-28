@@ -19,13 +19,11 @@ export const CustomAnimatedScrollView = ({
     style={styles.container}
     keyboardVerticalOffset={Platform.OS === 'ios' ? 56 : 0}>
     <ScrollView
-      ref={ref}
       showsVerticalScrollIndicator={false}
       keyboardDismissMode="interactive"
       scrollEventThrottle={16}
       {...props}>
       {children}
-      <View height={SCREEN_HEIGHT / 2.5} />
     </ScrollView>
   </KeyboardAvoidingView>
 );

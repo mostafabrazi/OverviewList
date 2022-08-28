@@ -5,8 +5,9 @@ export type Parameters = {
 export type ItemsGroupKeyType = 'allPeople' | 'allPlanets' | 'allStarships';
 export type ItemsKeyType = 'people' | 'planet' | 'starship';
 export type ItemType = {
-  type: string;
+  type: 'Person' | 'Starship' | 'Planet';
   name: string;
+  image?: string;
 };
 export type ItemsType = {[key in ItemsKeyType]: ItemType[]};
 export type ItemsResultType = {

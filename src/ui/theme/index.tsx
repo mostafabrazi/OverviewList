@@ -16,9 +16,10 @@ const createTheme = <T extends BaseThemeType>(themeObject: T): T => themeObject;
 
 const BaseTheme = {
   colors: {
-    text: '#2A1A07',
-    primary: '#371F15',
-    secondary: '#E2D3AB',
+    text: '#D8C288',
+    primary: '#3C2518',
+    secondary: '#D8C288',
+    tertiary: '#9D9F9E',
 
     black: '#151522',
     grey1: '#333333',
@@ -72,7 +73,9 @@ export const theme = createTheme({
     },
   },
   textVariants: {
-    defaults: {},
+    defaults: {
+      color: 'text',
+    },
     header: {
       fontFamily: 'Inter',
       fontWeight: 'bold',

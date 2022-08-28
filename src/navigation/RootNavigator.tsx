@@ -2,15 +2,14 @@ import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from './NavigationContainer';
 import {Home} from 'screens';
-import {SafeAreaView, useTheme} from 'ui';
+import {SafeAreaView} from 'ui';
 
 const Stack = createStackNavigator();
 
 export const RootNavigator = () => {
-  const {colors} = useTheme();
   return (
     <NavigationContainer>
-      <SafeAreaView edges={['top']} style={{backgroundColor: colors.primary}} />
+      <SafeAreaView edges={['top']} bg="primary" />
       <Stack.Navigator
         initialRouteName="Home"
         screenOptions={{
