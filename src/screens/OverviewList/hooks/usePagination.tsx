@@ -1,5 +1,5 @@
 import {useItems} from 'api';
-import {useCallback, useEffect, useReducer} from 'react';
+import {useEffect, useReducer} from 'react';
 import {INITIAL_PAGE} from 'utils';
 
 export type Pagination = {
@@ -22,13 +22,10 @@ export const usePagination = () => {
   const [{limit}, dispatch] = useReducer(paginationReducer, {
     limit: INITIAL_PAGE,
   });
-  const {isLoading, data, refetch} = useItems({limit});
-  const nextPage = useCallback(() => dispatch({type: 'NEXT'}), []);
+  // disable loading data until we trigger it via refetch
+  const {refetch} = useItems({limit}, {enabled: false});
   useEffect(() => {
-    if (limit && limit > INITIAL_PAGE && refetch) {
-      console.log('limit: ', limit);
-      refetch();
-    }
+    limit && limit > INITIAL_PAGE && refetch && refetch();
   }, [limit, refetch]);
-  return {data, isLoading, nextPage};
+  return {nextPage: () => dispatch({type: 'NEXT'})};
 };

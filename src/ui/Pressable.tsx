@@ -1,5 +1,5 @@
 import {createBox} from '@shopify/restyle';
-import {Pressable as NSPressable} from 'react-native';
+import {TouchableOpacity as NSPressable} from 'react-native';
 import {Theme} from './theme';
 
 export const Pressable =

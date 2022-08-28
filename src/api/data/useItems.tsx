@@ -13,17 +13,12 @@ export const useItems = (
       >
     | undefined,
 ) => {
-  return useQuery(
-    'items',
-    async () => {
-      const result = await graphQLClient.request<ItemsResultType>(
-        GET_ITEMS,
-        params,
-      );
-      return result && Object.keys(result).length > 0
-        ? normalizeResults(result)
-        : [];
-    },
-    config,
-  );
+  return useQuery('items', () => getItems(params), config);
+};
+
+export const getItems = async (params: Parameters, query = GET_ITEMS) => {
+  const result = await graphQLClient.request<ItemsResultType>(query, params);
+  return result && Object.keys(result).length > 0
+    ? normalizeResults(result)
+    : [];
 };

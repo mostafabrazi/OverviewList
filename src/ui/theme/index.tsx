@@ -18,8 +18,10 @@ const BaseTheme = {
   colors: {
     text: '#D8C288',
     primary: '#3C2518',
-    secondary: '#D8C288',
+    secondary: '#B1A272',
     tertiary: '#9D9F9E',
+
+    transparent_button: 'rgba(216, 194, 136, 0.1)',
 
     black: '#151522',
     grey1: '#333333',

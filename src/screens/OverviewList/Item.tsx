@@ -1,22 +1,22 @@
 import {ItemType} from 'api';
-import React, {memo} from 'react';
+import React from 'react';
 import {ImageBackground} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {Pressable, styles, Text, View} from 'ui';
 import {ITEM_HEIGHT, SCREEN_WIDTH} from 'utils';
 
-export const Item = memo(({item, index}: {item: ItemType; index: number}) => {
+export const Item = ({item, index}: {item: ItemType; index: number}) => {
   return (
     <View style={styles.shadow}>
       <Pressable
-        key={index.toString()}
-        width={(SCREEN_WIDTH - 3 * 14) / 2}
         mr="m"
-        ml={index % 2 !== 0 ? undefined : 'm'}
+        mb="m"
         borderRadius={20}
-        borderBottomEndRadius={60}
         overflow="hidden"
-        mb="m">
+        key={index.toString()}
+        borderBottomEndRadius={60}
+        width={(SCREEN_WIDTH - 3 * 14) / 2}
+        ml={index % 2 !== 0 ? undefined : 'm'}>
         <View
           p="ml"
           flex={1}
@@ -38,11 +38,12 @@ export const Item = memo(({item, index}: {item: ItemType; index: number}) => {
           source={{uri: item.image}}
           style={{width: (SCREEN_WIDTH - 3 * 14) / 2, height: ITEM_HEIGHT}}>
           <LinearGradient
-            colors={['rgba(0,0,0,0.5)', 'rgba(0,0,0,0.3)']}
+            // dark more the bottom area (0.6) to well show the name of item
+            colors={['rgba(0,0,0,0.3)', 'rgba(0,0,0,0.6)']}
             style={[styles.h100, styles.w100]}
           />
         </ImageBackground>
       </Pressable>
     </View>
   );
-});
+};

@@ -14,20 +14,23 @@ export const normalizeResults = (data: ItemsResultType) => {
 
 const attachRandomImages = (arr: ItemType[]) => {
   return arr.map((item, i) => {
-    console.log('type: ', item.type);
     const img =
       item.type === 'Person'
         ? randomPeopleImages[
-            i < randomPeopleImages.length ? i : i - randomPeopleImages.length
+            i < randomPeopleImages.length
+              ? i
+              : Math.floor(i % randomPeopleImages.length)
           ]
         : item.type === 'Starship'
         ? randomStarShipsImages[
             i < randomStarShipsImages.length
               ? i
-              : i - randomStarShipsImages.length
+              : Math.floor(i % randomStarShipsImages.length)
           ]
         : randomPlanetsImages[
-            i < randomPlanetsImages.length ? i : i - randomPlanetsImages.length
+            i < randomPlanetsImages.length
+              ? i
+              : Math.floor(i % randomPlanetsImages.length)
           ];
     return {...item, image: IMAGE_URL + img};
   });
