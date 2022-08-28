@@ -1,6 +1,6 @@
 import React from 'react';
 import {FlatList} from 'react-native';
-import {setFilter, useAnimatedHeader} from 'core';
+import {setFilter, useAnimatedHeader, useItemsStore} from 'core';
 import {Pressable, Text, useTheme} from 'ui';
 import {extractor, SCREEN_WIDTH} from 'utils';
 import Animated, {useAnimatedStyle, withTiming} from 'react-native-reanimated';
@@ -41,6 +41,7 @@ export const Filter = () => {
 
 const Item = ({item: {id}}: {item: {id: string}; index: number}) => {
   const filterBy = () => setFilter(id);
+  const filter = useItemsStore(state => state.filter);
 
   return (
     <Pressable
@@ -48,10 +49,13 @@ const Item = ({item: {id}}: {item: {id: string}; index: number}) => {
       mr="m"
       justifyContent="center"
       alignItems="center"
-      bg="transparent_button"
+      bg={filter === id ? 'secondary' : 'transparent_button'}
       borderRadius={30}
       onPress={filterBy}>
-      <Text fontSize={15} fontWeight="500">
+      <Text
+        fontSize={15}
+        fontWeight="500"
+        color={filter === id ? 'primary' : 'secondary'}>
         {id}
       </Text>
     </Pressable>

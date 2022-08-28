@@ -29,10 +29,11 @@ const BaseTheme = {
     grey3: '#C3C3C3',
     grey4: '#E4E4E4',
     white: 'white',
-    red: '#EB5757',
+    red: 'rgba(100, 10, 10, 1)',
   },
   spacing: {
     xs: 4,
+    xss: 6,
     s: 8,
     ms: 10,
     m: 14,
