@@ -12,7 +12,9 @@ export const Container = ({children, ...props}: ViewProps) => {
       locations={[0, 0.8, 1]}
       style={styles.container}
       {...props}>
-      <View flex={1}>{children}</View>
+      <View flex={1} height={'100%'}>
+        {children}
+      </View>
     </LinearGradient>
   );
 };

@@ -28,4 +28,11 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
   },
+  rotated_text: {
+    marginTop: 120,
+    transform: [{rotate: '90deg'}, {translateY: 90}],
+    width: 220,
+    height: 30,
+  },
+  big_image: {width: '100%', aspectRatio: 0.7},
 });

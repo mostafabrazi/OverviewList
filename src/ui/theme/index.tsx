@@ -22,6 +22,7 @@ const BaseTheme = {
     tertiary: '#9D9F9E',
 
     transparent_button: 'rgba(216, 194, 136, 0.1)',
+    transparent_dark: 'rgba(0,0,0,0.2)',
 
     black: '#151522',
     grey1: '#333333',
@@ -30,6 +31,7 @@ const BaseTheme = {
     grey4: '#E4E4E4',
     white: 'white',
     red: 'rgba(100, 10, 10, 1)',
+    blue: '#145B9D',
   },
   spacing: {
     xs: 4,

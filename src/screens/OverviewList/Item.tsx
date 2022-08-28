@@ -13,7 +13,7 @@ const CARD_WIDTH = (SCREEN_WIDTH - 3 * 14) / 2;
 export function Item({item, index}: {item: ItemType; index: number}) {
   const {spacing} = useTheme();
   const {push} = useNavigation<StackNavigationProp<RootStackParamList>>();
-  const openDetails = () => push('OverviewItemDetails', {id: item.name});
+  const openDetails = () => push('OverviewItemDetails', item);
 
   return (
     <View style={styles.shadow}>
@@ -52,7 +52,7 @@ export function Item({item, index}: {item: ItemType; index: number}) {
               width={CARD_WIDTH - 2 * spacing.ml}
               onPress={openDetails}>
               <Text fontSize={13} fontWeight="500">
-                See details
+                Details
               </Text>
             </Pressable>
           </View>
