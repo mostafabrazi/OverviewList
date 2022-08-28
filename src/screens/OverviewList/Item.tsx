@@ -16,7 +16,7 @@ export function Item({item, index}: {item: ItemType; index: number}) {
   const openDetails = () => push('OverviewItemDetails', item);
 
   return (
-    <View style={styles.shadow}>
+    <View key={item.id} style={styles.shadow}>
       <Pressable
         mr="m"
         mb="m"

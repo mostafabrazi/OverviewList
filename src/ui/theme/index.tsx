@@ -56,7 +56,7 @@ export const theme = createTheme({
     dark: false,
     colors: {
       primary: 'rgb(0, 122, 255)',
-      background: '#f8f8fa',
+      background: '#3C2518',
       card: '#f8f8fa',
       text: '#0c1245',
       border: 'rgb(199, 199, 204)',

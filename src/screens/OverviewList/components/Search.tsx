@@ -26,6 +26,7 @@ export const Search = () => {
         value={search}
         onChangeText={setSearch}
         placeholder="Search..."
+        autoCapitalize="words"
         placeholderTextColor={colors.secondary}
         style={{
           color: colors.text,
