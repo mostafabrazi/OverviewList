@@ -1,15 +1,16 @@
 import React from 'react';
-import {Header} from './Header';
-import {Container} from './Container';
 import {List} from './List';
-import {Filter} from './Filter';
+import {Filter, Header, Search, SearchFloatingButton} from './components';
+import {Container} from 'components';
 
 export const OverviewList = () => {
   return (
     <Container>
       <Header />
       <Filter />
+      <Search />
       <List />
+      <SearchFloatingButton />
     </Container>
   );
 };

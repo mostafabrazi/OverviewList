@@ -32,24 +32,24 @@ export const Filter = () => {
         horizontal
         data={SWAPITypes}
         keyExtractor={extractor}
-        renderItem={Item}
+        renderItem={({item, index}) => <Item item={item} index={index} />}
         style={{paddingHorizontal: spacing.m, marginBottom: spacing.m}}
       />
     </Animated.View>
   );
 };
 
-export const Item = ({item: {id}}: {item: {id: string}}) => {
+const Item = ({item: {id}}: {item: {id: string}; index: number}) => {
   const filterBy = () => setFilter(id);
 
   return (
     <Pressable
-      p="ms"
+      p="m"
       mr="m"
       justifyContent="center"
       alignItems="center"
       bg="transparent_button"
-      borderRadius={20}
+      borderRadius={30}
       onPress={filterBy}>
       <Text fontSize={15} fontWeight="500">
         {id}

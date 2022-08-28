@@ -1,4 +1,6 @@
-export type RootStackParamList = null;
+export type RootStackParamList = {
+  OverviewItemDetails: {id: string};
+};
 
 // very important to type check useNavigation hook
 declare global {

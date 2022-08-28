@@ -1,7 +1,7 @@
-import React, {memo} from 'react';
+import React from 'react';
 import {Text, View} from 'ui';
 
-export const Empty = memo(() => {
+export const Empty = () => {
   return (
     <View flex={1} justifyContent="center" alignItems="center">
       <Text fontSize={18} fontWeight="700">
@@ -9,4 +9,4 @@ export const Empty = memo(() => {
       </Text>
     </View>
   );
-});
+};

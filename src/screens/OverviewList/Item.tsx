@@ -1,11 +1,17 @@
-import {ItemType} from 'api';
 import React from 'react';
+import {ItemType} from 'api';
+import {useNavigation} from '@react-navigation/native';
 import {ImageBackground} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {Pressable, styles, Text, View} from 'ui';
 import {ITEM_HEIGHT, SCREEN_WIDTH} from 'utils';
+import {StackNavigationProp} from '@react-navigation/stack';
+import {RootStackParamList} from 'navigation/types';
 
-export const Item = ({item, index}: {item: ItemType; index: number}) => {
+export function Item({item, index}: {item: ItemType; index: number}) {
+  const {push} = useNavigation<StackNavigationProp<RootStackParamList>>();
+  const openDetails = () => push('OverviewItemDetails', {id: item.name});
+
   return (
     <View style={styles.shadow}>
       <Pressable
@@ -16,7 +22,8 @@ export const Item = ({item, index}: {item: ItemType; index: number}) => {
         key={index.toString()}
         borderBottomEndRadius={60}
         width={(SCREEN_WIDTH - 3 * 14) / 2}
-        ml={index % 2 !== 0 ? undefined : 'm'}>
+        ml={index % 2 !== 0 ? undefined : 'm'}
+        onPress={openDetails}>
         <View
           p="ml"
           flex={1}

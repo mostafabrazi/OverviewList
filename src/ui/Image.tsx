@@ -9,7 +9,7 @@ const ImageProgress = createImageProgress(FastImage);
 const SImage =
   createBox<Theme, React.ComponentProps<typeof ImageProgress>>(ImageProgress);
 type Props = React.ComponentProps<typeof SImage>;
-export const Image = React.memo((props: Props) => {
+export const Image = (props: Props) => {
   const {source} = props;
   // return null with incorrect urls
   if (
@@ -21,7 +21,6 @@ export const Image = React.memo((props: Props) => {
   }
   return (
     <SImage
-      indicator={ImageLoader}
       threshold={250}
       renderError={() => {
         return (
@@ -39,5 +38,4 @@ export const Image = React.memo((props: Props) => {
       overflow="hidden"
     />
   );
-});
-const ImageLoader = () => null; // <ActivityIndicator color="#000" size="small" />;
+};
