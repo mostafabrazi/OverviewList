@@ -47,6 +47,7 @@ const Item = ({item: {id}}: {item: {id: string}; index: number}) => {
     <Pressable
       p="m"
       mr="m"
+      key={id.toString()}
       justifyContent="center"
       alignItems="center"
       bg={filter === id ? 'secondary' : 'transparent_button'}

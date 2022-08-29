@@ -92,6 +92,7 @@ export const OverviewItemDetails = () => {
                         p="m"
                         mr="s"
                         mb="s"
+                        key={key}
                         borderWidth={1}
                         bg="transparent_dark"
                         borderColor="secondary"

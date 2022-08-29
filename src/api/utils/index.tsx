@@ -1,18 +1,21 @@
 import {IMAGE_URL} from '@env';
 import {ItemsKeyType, ItemsResultType, ItemsType, ItemType} from 'api/types';
 
-export const normalizeResults = (data: ItemsResultType) => {
+export const normalizeResults = (data: ItemsResultType, jest = false) => {
   return Object.values(data).reduce((acc: ItemType[], val: ItemsType) => {
     let result: ItemType[] = [];
     Object.keys(val).forEach((key: ItemsKeyType | string) => {
       const arr = val[key as ItemsKeyType];
-      result = attachRandomImages(result.concat(arr));
+      result = attachRandomImages(result.concat(arr), jest);
     });
     return [...acc, ...result];
   }, []);
 };
 
-const attachRandomImages = (arr: ItemType[]) => {
+const attachRandomImages = (arr: ItemType[], jest = false) => {
+  if (jest) {
+    return arr;
+  }
   return arr.map((item, i) => {
     const img =
       item.type === 'Person'

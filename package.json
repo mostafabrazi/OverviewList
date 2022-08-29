@@ -76,6 +76,10 @@
   },
   "jest": {
     "preset": "react-native",
+    "transformIgnorePatterns": [
+      "/node_modules/(?!(@react-native|react-native|react-navigation|react-error-boundary|react-native-exception-handler|react-native-linear-gradient)/).*/",
+      "/node_modules/react-native-exception-handler/index.js"
+    ],
     "moduleFileExtensions": [
       "ts",
       "tsx",

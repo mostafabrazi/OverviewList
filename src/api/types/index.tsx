@@ -3,7 +3,7 @@ export type Parameters = {
 };
 
 export type ItemsGroupKeyType = 'allPeople' | 'allPlanets' | 'allStarships';
-export type ItemsKeyType = 'people' | 'planet' | 'starship';
+export type ItemsKeyType = 'people' | 'planets' | 'starships';
 export type ItemType = {
   id: string;
   type: 'Person' | 'Starship' | 'Planet';
